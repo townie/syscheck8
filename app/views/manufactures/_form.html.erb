@@ -1,0 +1,14 @@
+<%= simple_form_for @manufacture do |f| %>
+  <div class="row">
+
+    <div class="small-12 medium-12 columns">
+      <%= f.input :name, required: true, placeholder: "Ford, Toyota, etc"%>
+    </div>
+    <div class="small-12 medium-12 columns">
+      <%= f.input :country, priority: ["USA"], required: true %>
+    </div>
+    <div class= "small-12 medium-12 columns">
+     <%= f.submit  %>
+    </div>
+  </div>
+<% end %>
