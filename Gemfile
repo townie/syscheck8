@@ -21,6 +21,7 @@ group :development, :test do
   gem 'capybara'
   gem 'valid_attribute'
   gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
 gem 'country_select'

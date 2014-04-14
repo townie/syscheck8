@@ -13,6 +13,9 @@
     <div class="small-12 medium-12 columns">
       <%= f.input :description, as: :text, placeholder: "Description" %>
     </div>
+    <div class="small-12 medium-12 columns">
+      <%= f.association :manufacture %>
+    </div>
     <div class= "small-12 medium-12 columns">
      <%= f.submit  %>
     </div>

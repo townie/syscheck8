@@ -1,4 +1,8 @@
 class ManufacturesController < ApplicationController
+  def index
+    @manufactures = Manufacture.all
+  end
+
   def new
     @manufacture = Manufacture.new
   end
@@ -11,7 +15,28 @@ class ManufacturesController < ApplicationController
     else
       render 'new', notice: "Please enter valid info"
     end
+  end
 
+  def update
+    @manufacture = Manufacture.find(params[:id])
+
+  end
+
+  def update
+    @manufacture = Manufacture.find(params[:id])
+    if @manufacture.update(manufacture_params)
+      redirect_to @manufacture, notice: 'Manufacture was successfully updated.'
+    else
+      render 'index'
+    end
+
+  end
+
+
+  def destroy
+    @manufacture = Manufacture.find(params[:id])
+    @manufacture.destroy
+    redirect_to manufactures_path
   end
 
   protected

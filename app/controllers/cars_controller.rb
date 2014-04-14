@@ -28,10 +28,21 @@ class CarsController < ApplicationController
 
   end
 
+   def update
+    @car = Car.find(params[:id])
+    if @car.update(car_params)
+      redirect_to @car, notice: 'Car was successfully updated.'
+    else
+      render 'index'
+    end
+
+  end
+
+
   protected
 
   def car_params
-    params.require(:car).permit(:year, :color, :description, :mileage)
+    params.require(:car).permit(:year, :color, :description, :mileage, :manufacture_id)
   end
 
 end

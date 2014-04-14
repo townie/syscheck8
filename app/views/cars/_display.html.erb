@@ -4,6 +4,7 @@
   <td>mileage</td>
   <td>color</td>
   <td>description</td>
+  <td>manufacture</td>
 </tr>
 <% @cars.each do |car| %>
   <tr>
@@ -18,6 +19,9 @@
     </td>
     <td>
      <%= link_to car.description, car_path(car.id) %>
+    </td>
+    <td>
+     <%= car.manufacture ? car.manufacture.name : '' %>
     </td>
  </tr>
  <% end %>

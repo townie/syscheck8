@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Manufacture do
+  it { should have_many(:cars) }
+
   it { should have_valid(:name).when('Ford', 'Toyota') }
   it { should_not have_valid(:name).when('', nil) }
 
