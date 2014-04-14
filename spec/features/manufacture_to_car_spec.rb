@@ -14,7 +14,7 @@ feature 'car get an manufacture', %q{
     visit new_manufacture_path
 
     fill_in "Name", with: "Ford"
-    fill_in "Country", with: "USA"
+    select("USA", from: "Country")
     click_on "Create Manufacture"
 
     expect(page).to have_content("New manufacture created")
@@ -23,8 +23,8 @@ feature 'car get an manufacture', %q{
   scenario 'If I do not specify the required information, I am presented with errors.' do
     visit new_manufacture_path
 
-    fill_in "Name", with: "Ford"
-    fill_in "Country", with: ""
+    fill_in "Name", with: ""
+    select("USA", from: "Country")
     click_on "Create Manufacture"
 
     expect(page).to have_content("can't be blank")
@@ -32,9 +32,10 @@ feature 'car get an manufacture', %q{
 
   scenario 'If I specify the required information, the manufacturer is recorded and I am redirected to enter another new manufacturer.' do
     prev_count = Manufacture.count
+    visit new_manufacture_path
 
     fill_in "Name", with: "Ford"
-    fill_in "Country", with: "USA"
+    select("USA", from: "Country")
     click_on "Create Manufacture"
 
     expect(Manufacture.count).to eq(prev_count + 1)

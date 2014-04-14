@@ -23,6 +23,7 @@ group :development, :test do
   gem 'launchy'
 end
 
+gem 'country_select'
 gem 'foundation-rails'
 gem 'simple_form'
 # Use jquery as the JavaScript library
