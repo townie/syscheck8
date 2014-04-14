@@ -1,0 +1,20 @@
+<%= simple_form_for @car do |f| %>
+  <div class="row">
+
+    <div class="small-12 medium-4 columns">
+      <%= f.input :year,            required: true, placeholder: "2014"%>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <%= f.input :mileage,           required: true, placeholder: "150000"%>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <%= f.input :color,     required: true, placeholder: "Yellow" %>
+    </div>
+    <div class="small-12 medium-12 columns">
+      <%= f.input :description, as: :text, placeholder: "Description" %>
+    </div>
+    <div class= "small-12 medium-12 columns">
+     <%= f.submit  %>
+    </div>
+  </div>
+<% end %>
