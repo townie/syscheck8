@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Car do
+  it { should belong_to(:manufacture)}
+
   it { should have_valid(:color).when('yellow', 'black') }
   it { should_not have_valid(:color).when('', nil) }
 
