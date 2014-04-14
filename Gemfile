@@ -18,7 +18,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'minitest'
   gem 'shoulda'
-
+  gem 'capybara'
+  gem 'valid_attribute'
+  gem 'launchy'
 end
 
 gem 'foundation-rails'

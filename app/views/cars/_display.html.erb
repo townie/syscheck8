@@ -1,0 +1,23 @@
+<table>
+<tr>
+  <td>year</td>
+  <td>mileage</td>
+  <td>color</td>
+  <td>description</td>
+</tr>
+<% @cars.each do |car| %>
+  <tr>
+    <td>
+      <%= car.year %>
+    </td>
+    <td>
+     <%= car.mileage %>
+    </td>
+    <td>
+     <%= car.color %>
+    </td>
+    <td>
+     <%= link_to car.description, car_path(car.id) %>
+    </td>
+ </tr>
+ <% end %>
